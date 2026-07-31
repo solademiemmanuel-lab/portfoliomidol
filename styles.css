@@ -408,7 +408,15 @@ button:focus-visible {
   border: 1px solid var(--gold-dim);
 }
 
+.hero,
+.hero-grid,
+.hero-grid > div,
 .hero-stats-wrap {
+  min-width: 0;
+}
+
+.hero-stats-wrap {
+  width: 100%;
   margin-top: 64px;
   padding-top: 36px;
   border-top: 1px solid var(--emerald-line);
@@ -1231,5 +1239,5 @@ section {
     flex-direction: column;
     align-items: flex-start;
   }
-   }
+     }
    
