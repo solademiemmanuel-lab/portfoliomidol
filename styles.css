@@ -30,8 +30,17 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.hero,
+.hero-grid,
+.hero-visual,
+.hero-photo-frame {
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -347,12 +356,15 @@ button:focus-visible {
 .hero-visual {
   position: relative;
   height: 560px;
+  max-width: 100%;
+  overflow: visible;
 }
 
 .hero-photo-frame {
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--emerald-line);
@@ -1117,6 +1129,14 @@ section {
     margin-bottom: 8px;
   }
 
+  .hero-badge.b1 {
+    left: 4%;
+  }
+
+  .hero-badge.b2 {
+    right: 4%;
+  }
+
   .about-portrait {
     max-width: 320px;
   }
@@ -1211,82 +1231,5 @@ section {
     flex-direction: column;
     align-items: flex-start;
   }
-
-   /* ============================================
-   RESPONSIVE MOBILE BREAKPOINTS 
-   ============================================ */
-
-/* Small Desktops and Tablets */
-@media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr; /* Drop desktop columns to stacks */
-    gap: 48px;
-    text-align: center;
-  }
-
-  .hero-lede {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-visual {
-    max-width: 480px;
-    margin: 0 auto;
-    height: 480px; /* Bring frame layout to manageable tablet height */
-  }
-  
-  .nav-links, .nav-cta {
-    display: none; /* Hide default nav elements until toggle is coded */
-  }
-  
-  .nav-toggle {
-    display: block; /* Prepare mobile button space */
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 576px) {
-  .container {
-    padding: 0 20px; /* Snugger padding for tight screens */
-  }
-
-  .hero {
-    padding: 120px 0 60px; /* Lower padding so it starts sooner */
-  }
-
-  .hero h1 {
-    font-size: 32px; /* Fixes massive text clipping */
-    line-height: 1.2;
-  }
-
-  .hero-visual {
-    height: 380px; /* Scale image down gracefully for smaller screen ratios */
-    width: 100%;
-  }
-
-  /* Clip the hanging badges tightly so they don't force side-scrolling */
-  .hero-badge.b1 {
-    left: 2%;
-    top: 4%;
-  }
-
-  .hero-badge.b2 {
-    right: 2%;
-    bottom: 4%;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch; /* Stretch action buttons full width for clean mobile clicks */
-  }
-
-  .btn-primary, .btn-ghost {
-    justify-content: center;
-  }
-}
+   }
    
-}
